@@ -12,6 +12,7 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (terrasove
 4. [Concurrentie-benchmark](docs/04-concurrentie-benchmark.md) — Bozarc tegenover MiniFlat, Veranco, Winsol, Harol, Ovalux
 5. [Doelgroep en seizoenspatroon](docs/05-doelgroep-seizoenspatroon.md) — B2C en B2B
 6. [Aanbevelingen](docs/06-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
+7. [Cloudflare Pages publicatie](docs/07-cloudflare-pages.md) — automatische microsite vanuit GitHub
 
 ## Reports
 
@@ -19,3 +20,17 @@ Bijkomend onderzoeks- en deliverable-materiaal staat in [`reports/`](reports/):
 
 - [`Bozarc_Analyse_Website_Marketing.pdf`](reports/Bozarc_Analyse_Website_Marketing.pdf) — het volledige rapport als pdf (gegenereerd via [`generate_pdf.py`](reports/generate_pdf.py)). Bevat een aantal gelabelde plaatshouders voor schermafbeeldingen die nog manueel toegevoegd moeten worden.
 - [`bozarc_keyword_research.xlsx`](reports/bozarc_keyword_research.xlsx) — de volledige keyword-werkmap (clusters, autosuggest-rondes, negatives, sources) waarop onderdeel 3 is gebaseerd.
+
+## Cloudflare Pages
+
+Deze repo bevat een kleine statische researchsite die de markdown-documenten en downloads publiceert via Cloudflare Pages.
+
+```bash
+npm run build
+```
+
+Gebruik in Cloudflare Pages:
+
+- Build command: `npm run build`
+- Build output directory: `site/dist`
+- Production branch: `main`

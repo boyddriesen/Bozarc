@@ -1,0 +1,6 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "bozarc-research",
+  "pages_build_output_dir": "./site/dist",
+  "compatibility_date": "2026-06-22"
+}
