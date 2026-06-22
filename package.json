@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "node site/build.mjs",
-    "preview": "npx wrangler pages dev site/dist --compatibility-date=2026-06-22",
-    "deploy": "npm run build && npx wrangler pages deploy site/dist --project-name bozarc"
+    "preview": "npm run build && npx wrangler dev --assets site/dist --name bozarc-site --compatibility-date=2026-06-22",
+    "deploy": "npm run build && npx wrangler deploy --assets site/dist --name bozarc-site"
   },
   "engines": {
     "node": ">=20"

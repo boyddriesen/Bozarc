@@ -1,6 +1,6 @@
-# 7. Cloudflare Pages publicatie
+# 7. Cloudflare Workers publicatie
 
-Deze repo is voorbereid om als kleine research-microsite op Cloudflare Pages te draaien.
+Deze repo is voorbereid om als kleine research-microsite via Cloudflare Workers static assets te draaien.
 
 ## Bron en output
 
@@ -8,20 +8,20 @@ Deze repo is voorbereid om als kleine research-microsite op Cloudflare Pages te 
 - Build script: `site/build.mjs`
 - Build command: `npm run build`
 - Output directory: `site/dist`
-- Cloudflare projectnaam: `bozarc`
+- Cloudflare projectnaam: `bozarc-site`
+- Deploy command: `npx wrangler deploy --assets site/dist --name bozarc-site`
 
 De site rendert de bestaande markdown-documenten naar een deelbare webpagina en kopieert de PDF en Excel naar de publieke output.
 
-## Cloudflare Pages instellen
+## Cloudflare Workers instellen
 
 1. Ga in Cloudflare naar `Workers & Pages`.
-2. Kies `Create application` en daarna `Pages`.
-3. Kies `Connect to Git`.
+2. Kies `Create application` en connecteer GitHub.
 4. Selecteer de GitHub repo `boyddriesen/Bozarc`.
 5. Gebruik deze instellingen:
-   - Framework preset: `None`
+   - Project name: `bozarc-site`
    - Build command: `npm run build`
-   - Build output directory: `site/dist`
+   - Deploy command: `npx wrangler deploy --assets site/dist --name bozarc-site`
    - Production branch: `main`
 6. Deploy.
 
@@ -31,7 +31,7 @@ Elke push naar `main` bouwt daarna automatisch een nieuwe versie. Pull requests 
 
 ```bash
 npm run build
-npx wrangler pages dev site/dist --compatibility-date=2026-06-22
+npx wrangler dev --assets site/dist --name bozarc-site --compatibility-date=2026-06-22
 ```
 
 ## Waarom niet direct AI naar live?
@@ -39,7 +39,7 @@ npx wrangler pages dev site/dist --compatibility-date=2026-06-22
 De veilige workflow blijft:
 
 ```text
-AI voorstel -> GitHub PR -> review/merge -> Cloudflare Pages publiceert
+AI voorstel -> GitHub PR -> review/merge -> Cloudflare Workers publiceert
 ```
 
 Zo blijft GitHub de bron van waarheid en wordt de publieke klantpagina niet ongecontroleerd overschreven.
