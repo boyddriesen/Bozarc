@@ -1,6 +1,6 @@
 # Bozarc — Analyse website &amp; marketingkanalen
 
-Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (terrasoverkappingen, carports en aanverwante producten). Dit document geeft een doelbewust beknopte analyse van de huidige website en marketinginspanningen, gepositioneerd tegenover de markt, met concrete aanbevelingen.
+Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (carports, terrasoverkappingen, Nova, Vista, serres/tuinkamers en B2B-overkappingen). Dit document geeft een doelbewust beknopte analyse van de huidige website en marketinginspanningen, gepositioneerd tegenover de markt, met concrete aanbevelingen.
 
 **Doel:** aantonen dat we het merk, de doelgroep en de markt waarin Bozarc speelt goed begrijpen — als basis voor een verdere samenwerking. Geen cijfers of prijsvoorstel op dit moment, puur strategische aanbevelingen.
 
@@ -13,6 +13,7 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (terrasove
 5. [Doelgroep en seizoenspatroon](docs/05-doelgroep-seizoenspatroon.md) — B2C en B2B
 6. [Aanbevelingen](docs/06-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
 7. [Cloudflare Workers publicatie](docs/07-cloudflare-pages.md) — automatische microsite vanuit GitHub
+8. [Productbreed auditkader](docs/08-productbreed-auditkader.md) — scope-guard voor alle huidige producten en SEO/SEA/GEO/AEO
 
 ## Reports
 

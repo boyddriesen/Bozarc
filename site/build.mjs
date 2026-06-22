@@ -10,6 +10,7 @@ const docs = [
   ["concurrenten", "Concurrentie-benchmark", "docs/04-concurrentie-benchmark.md"],
   ["doelgroep", "Doelgroep en seizoen", "docs/05-doelgroep-seizoenspatroon.md"],
   ["aanbevelingen", "Aanbevelingen", "docs/06-aanbevelingen.md"],
+  ["productbreed", "Productbreed auditkader", "docs/08-productbreed-auditkader.md"],
 ];
 const downloads = [
   ["Bozarc_Analyse_Website_Marketing.pdf", "Strategisch rapport PDF"],
@@ -133,7 +134,7 @@ function page(renderedDocs) {
       <aside class="summary">
         <h2>Kernpunten</h2>
         <ul>
-          <li>Focus op aluminium carports, terrasoverkappingen en mobilhome/caravan carports.</li>
+          <li>Auditkader verbreed naar alle huidige productfamilies: carports, terras, Nova, Vista, serres en B2B.</li>
           <li>Concurrentiedruk komt van MiniFlat, Veranco, Winsol, Harol en Ovalux.</li>
           <li>Negatives en leadkwaliteit moeten vooraf besproken worden.</li>
           <li>Cloudflare Workers maakt hiervan een automatisch updatebare webpagina.</li>

@@ -23,8 +23,11 @@ Analytics en conversietracking correct laten opzetten, zodat het bestaande Googl
 ## 7. Herstructureer de Google Ads-campagnes op basis van keyword research
 De [keyword research](03-keyword-research.md) bevestigt drie testbare clusters (aluminium carports, terrasoverkappingen, mobilhome/caravan carports) en een lijst risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers, verkeerde regio's) die vandaag waarschijnlijk mee het dalende rendement op het bestaande budget verklaren. Voorstel: negatives meteen installeren, klein starten met de drie gevalideerde clusters, en samen met Bozarc een definitie van "een goede lead" vastleggen (producttype, regio, offertewaarde, gewonnen/verloren, marge) vóór verder op te schalen. Dit kan parallel lopen met de merk-/strategieworkshop — het is een snelle, onderbouwde verbetering op een kanaal dat vandaag al het grootste deel van het budget opslorpt.
 
+## 8. Maak de audit productbreed voor SEO, SEA, GEO en AEO
+De eerste advertentietest mag smal starten, maar de audit zelf mag niet smal blijven. BOzARC heeft vandaag meerdere productfamilies: carports, terrasoverkappingen, Nova, Vista, serres/tuinkamers en B2B-overkappingen. Per productfamilie moet duidelijk worden wie de concurrent is, welke zoekintentie bestaat, welke landingspagina nodig is, welke regio/taal relevant is voor lokale SEO en welke AI-/antwoordblokken nodig zijn voor GEO en AEO. Zie het [productbrede auditkader](08-productbreed-auditkader.md).
+
 ---
 
 ## Voorgestelde volgende stap
 
-We stellen voor om te starten met de gezamenlijke merk- en strategieworkshop. Dat geeft ons scherpe, gedragen doelstellingen om een concreet plan van aanpak voor website en marketing op te bouwen — afgestemd op wat Bozarc op korte en lange termijn wil bereiken.
+We stellen voor om te starten met de gezamenlijke merk- en strategieworkshop plus productprioriteitenmatrix. Dat geeft ons scherpe, gedragen doelstellingen om een concreet plan van aanpak voor website en marketing op te bouwen — afgestemd op wat Bozarc op korte en lange termijn wil bereiken.

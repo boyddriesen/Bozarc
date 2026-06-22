@@ -15,3 +15,17 @@ Vijf directe concurrenten — [MiniFlat](https://miniflat.com/), [Veranco](https
 MiniFlat springt er specifiek uit: een jong, sterk online-minded merk met een eigen configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt en — volgens eigen bronnen — een sterke toename in leads optekent.
 
 Ovalux verdient apart aandacht als Waalse concurrent: het merk heeft Franstalige en Nederlandstalige pagina's, een maatschappelijke zetel in Florenville en een duidelijke offerteflow voor aluminium carports en pergola's. Dat maakt het vooral relevant voor BOzARC wanneer Wallonië, Franstalige zoekwoorden of camping-car/carport-intentie strategisch belangrijk worden.
+
+## Productbrede concurrentiedekking
+
+Deze benchmark mag niet alleen op het algemene merk- of homepage-niveau blijven. Voor de volgende ronde moet per productfamilie bekeken worden wie de echte concurrent is:
+
+| BOzARC-productfamilie | Concurrentiecheck nodig |
+| --- | --- |
+| Carports auto/mobilhome/caravan | Carportspecialisten, aluminium spelers, camping-car/carport aanbieders, Waalse spelers zoals Ovalux |
+| Terrasoverkappingen, veranda, pergola, tuinkamer | Overkapping- en verandamerken, zonwering/pergola-spelers, lokale installateurs |
+| Nova en Vista | Productlijn- of merkspecifieke vergelijking: wat belooft deze lijn anders dan standaard overkappingen? |
+| Serres en tuinkamers | Serre-/tuinkamer-specialisten en configuratorgedreven spelers |
+| B2B-overkappingen | Speelplaats-, fietsenstalling-, rokersruimte-, stockage-, deurluifel- en inkomhal-aanbieders |
+
+De output van deze ronde moet dus niet "Bozarc versus vijf concurrenten" zijn, maar "per productfamilie: wie wint vandaag zichtbaar op SEO, SEA, GEO en AEO?"

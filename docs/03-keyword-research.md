@@ -9,6 +9,8 @@ De bijhorende werkmap met alle keyword-clusters, autosuggest-data en negatives s
 
 De keyword research toont duidelijke zoektaal rond aluminium carports, terrasoverkappingen, mobilhome/caravan carports, offerte-aanvragen en plaatsing. Dit is nog geen bewijs dat deze zoekwoorden winstgevend zijn. Het is wel voldoende als focuskaart voor een klantgesprek: welke projecten wil BOzARC actief aantrekken, welke intenties passen niet, en welke clusters testen we eerst met meetbare leadkwaliteit?
 
+Belangrijk: de drie startclusters zijn geen volledige productscope. Voor de bredere audit moeten ook BOzARC Nova, BOzARC Vista, serres/tuinkamers, B2B-overkappingen en accessoires/opties meegenomen worden. Zie het [productbrede auditkader](08-productbreed-auditkader.md).
+
 ## 2. De Belangrijkste Conclusie
 
 Dit document gaat niet over "welke keywords hebben we gevonden?" maar over:
@@ -27,6 +29,7 @@ Dit document gaat niet over "welke keywords hebben we gevonden?" maar over:
 | `offerte` en `laten plaatsen` tonen koopintentie | Interessant wanneer gekoppeld aan product, niet als losse brede term | Voorstel |
 | Mobilhome/caravan carports hebben aparte zoektaal | Mogelijk aparte campagne of advertentiegroep | Voorstel |
 | Serres, tuinkamers en B2B-overkappingen zijn aparte werelden | Niet zomaar mengen met particuliere carport/terrascampagnes | Review |
+| Nova, Vista, accessoires en B2B-toepassingen staan in het huidige aanbod | Moeten in SEO/SEA/GEO/AEO apart worden beoordeeld | Review |
 | Goedkoop, bouwpakket, tweedehands, outlet en verkeerde regio's zijn risicovol | Vooraf als negatives behandelen | Uitsluiten/review |
 | Brand searches zoals `bozarc offerte` zijn navigerend | Apart bekijken, niet mengen met non-brand acquisitie | Review |
 | Ovalux is een geverifieerde Waalse/Franstalige concurrent | Relevant als concurrentiebenchmark en als mogelijke competitor negative | Review/uitsluiten |
@@ -83,9 +86,12 @@ Zijn dit winstgevende nicheprojecten die BOzARC actief wil aantrekken?
 
 | Cluster | Waarom eerst bespreken? |
 | --- | --- |
+| BOzARC Nova | Merk-/productlijn met eigen offerteflow; niet zomaar onder algemene terrasoverkapping steken |
+| BOzARC Vista | Merk-/productlijn met eigen positionering en mogelijk eigen concurrentieset |
 | Serres en tuinkamers | Mogelijk andere marge, doelgroep en landingspagina |
 | B2B-overkappingen | Andere koper, langere beslissing, mogelijk aparte salesflow |
-| Geo-varianten | Servicegebied en showroomstrategie moeten bevestigd worden |
+| Accessoires en toepassingen | Glazen wanden, zonwering, windschermen, jacuzzi-overkappingen en opties kunnen upsell zijn of aparte zoekintentie |
+| Regio-/taalvarianten | Servicegebied en showroomstrategie moeten bevestigd worden |
 | Brand searches | Mogelijk nuttig defensief, maar incrementality onzeker |
 | Opties zoals glazen wanden/zonwering | Kan upsell zijn, maar ook losse lage-intent traffic aantrekken |
 
@@ -178,6 +184,8 @@ Start klein:
 5. Leads niet alleen meten op aantal, maar op kwaliteit en offertewaarde
 
 Niet meteen breed starten met alle clusters tegelijk.
+
+Parallel aan dit testplan moet een productbrede auditmatrix ingevuld worden. Zo blijft paid search pragmatisch klein, maar wordt de strategische audit niet blind voor producten die vandaag al in het aanbod zitten.
 
 ## 10. Beslissingen Die We Uit De Meeting Willen Halen
 
