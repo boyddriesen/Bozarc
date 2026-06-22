@@ -8,7 +8,7 @@ Deze repo is voorbereid om als kleine research-microsite op Cloudflare Pages te 
 - Build script: `site/build.mjs`
 - Build command: `npm run build`
 - Output directory: `site/dist`
-- Cloudflare projectnaam: `bozarc-research`
+- Cloudflare projectnaam: `bozarc`
 
 De site rendert de bestaande markdown-documenten naar een deelbare webpagina en kopieert de PDF en Excel naar de publieke output.
 
