@@ -29,6 +29,7 @@ Dit document gaat niet over "welke keywords hebben we gevonden?" maar over:
 | Serres, tuinkamers en B2B-overkappingen zijn aparte werelden | Niet zomaar mengen met particuliere carport/terrascampagnes | Review |
 | Goedkoop, bouwpakket, tweedehands, outlet en verkeerde regio's zijn risicovol | Vooraf als negatives behandelen | Uitsluiten/review |
 | Brand searches zoals `bozarc offerte` zijn navigerend | Apart bekijken, niet mengen met non-brand acquisitie | Review |
+| Ovalux is een geverifieerde Waalse/Franstalige concurrent | Relevant als concurrentiebenchmark en als mogelijke competitor negative | Review/uitsluiten |
 
 ## 4. Wat We Nog Niet Weten
 
@@ -103,6 +104,7 @@ Voorlopige uitsluitingen:
 - `gamma`
 - `brico`
 - `gumax`
+- `ovalux`
 - `groningen`
 - `rotterdam`
 - `schoonmaken`
@@ -139,6 +141,7 @@ Bespreek:
 - DIY/bouwpakket
 - Tweedehands
 - Concurrent/retail
+- Waalse concurrenten zoals Ovalux
 - Verkeerde regio's
 - Onderhoud/verwijdering
 
@@ -215,4 +218,4 @@ Bronnen:
 - DashThis - SEO Presentation for Clients: https://dashthis.com/blog/seo-presentation/
 - Authority Specialist - SEO Report for Clients: https://app.authorityspecialist.com/guides/how-to-make-seo-report-for-client
 - COREPPC - Google Ads Keyword Research: https://coreppc.com/google-ads/google-ads-keyword-research-guide/
-
+- Ovalux - concurrentiecontext: https://ovalux.com/

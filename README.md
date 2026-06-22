@@ -9,7 +9,7 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (terrasove
 1. [Website-analyse](docs/01-website-analyse.md) — huidige staat van bozarc.be
 2. [Marketingkanalen](docs/02-marketingkanalen.md) — Google Ads, social media, meetbaarheid
 3. [Keyword research](docs/03-keyword-research.md) — besprekingsdocument met clusters, negatives en testplan voor Google Ads/SEO
-4. [Concurrentie-benchmark](docs/04-concurrentie-benchmark.md) — Bozarc tegenover MiniFlat, Veranco, Winsol, Harol
+4. [Concurrentie-benchmark](docs/04-concurrentie-benchmark.md) — Bozarc tegenover MiniFlat, Veranco, Winsol, Harol, Ovalux
 5. [Doelgroep en seizoenspatroon](docs/05-doelgroep-seizoenspatroon.md) — B2C en B2B
 6. [Aanbevelingen](docs/06-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
 

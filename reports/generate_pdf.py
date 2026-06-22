@@ -163,7 +163,7 @@ story.append(Paragraph(
 story.append(Spacer(1, 6))
 story.append(callout(
     "Leeswijzer: onderdeel 2 en 3 bekijken de huidige website en marketingkanalen, onderdeel 4 gaat "
-    "dieper in op de keyword research, onderdeel 5 benchmarkt Bozarc tegenover vier directe "
+    "dieper in op de keyword research, onderdeel 5 benchmarkt Bozarc tegenover vijf directe "
     "concurrenten, onderdeel 6 schetst de doelgroep, en onderdeel 7 bundelt de concrete aanbevelingen.",
     "info"))
 story.append(Spacer(1, 14))
@@ -288,7 +288,7 @@ story.append(bullets([
 
 story.append(callout(
     "Voorlopige negatives (vooraf uit te sluiten): goedkoop, budget, bouwpakket, zelfbouw, "
-    "tweedehands, outlet, promo, hubo, gamma, brico, gumax, groningen, rotterdam, schoonmaken, "
+    "tweedehands, outlet, promo, hubo, gamma, brico, gumax, ovalux, groningen, rotterdam, schoonmaken, "
     "verwijderen, vacature. Te bevestigen met Bozarc of er termen tussen staan die toch toegelaten "
     "moeten worden.", "warn"))
 story.append(Spacer(1, 6))
@@ -316,29 +316,34 @@ story.append(bullets([
 story.append(PageBreak())
 story += section_kicker("5", "Bozarc tegenover de markt")
 story.append(Paragraph(
-    "Vier directe concurrenten — MiniFlat, Veranco, Winsol en Harol — laten zien waar de markt vandaag "
+    "Vijf directe concurrenten — MiniFlat, Veranco, Winsol, Harol en Ovalux — laten zien waar de markt vandaag "
     "staat. Bij elk van hen valt een gelijkaardig patroon op: heldere, productgerichte navigatie, een "
     "warme/lifestyle-gerichte tone of voice, en laagdrempelige online tools die bezoekers meteen "
-    "betrekken vóór er een offerte wordt aangevraagd.", styles["Body"]))
+    "betrekken vóór er een offerte wordt aangevraagd. Ovalux is extra relevant als Waalse/Franstalige "
+    "benchmark rond aluminium carports, pergola's en carports voor camping-cars.", styles["Body"]))
 story.append(Spacer(1, 8))
 
-comp_header = ["", "Bozarc (vandaag)", "MiniFlat", "Veranco", "Winsol", "Harol"]
+comp_header = ["", "Bozarc (vandaag)", "MiniFlat", "Veranco", "Winsol", "Harol", "Ovalux"]
 comp_rows = [
     ["Branding / tone of voice", "Grijs, technisch, weinig karakter",
-     "Dromerig, persoonlijk", "Warm, familiaal, vakmanschap",
-     "Premium, lifestyle-gericht", "Modern, expert maar toegankelijk"],
+     "Dromerig, persoonlijk", "Warm, familiaal",
+     "Premium lifestyle", "Modern, toegankelijk",
+     "Premium, technisch"],
     ["Navigatie", "Merken, producten en B2B gemengd",
-     "Helder per product", "Helder per product", "Helder, met klantsegmenten",
-     "Helder + apart luik 'professionelen'"],
+     "Helder per product", "Helder per product", "Helder per segment",
+     "Helder + B2B-luik",
+     "Pergola, auto, camping-car"],
     ["Online tool / configurator", "Geen", "Prijssimulator + 3D-render",
-     "Geen", "Budgetcalculator + simulatoren", "Productzoeker + offertetool"],
-    ["Social media", "Enkel projectfoto's", "—", "—", "—", "—"],
+     "Geen", "Budgetcalc.", "Zoeker + offerte",
+     "Online offerte, 48 uur"],
+    ["Social media", "Enkel projectfoto's", "—", "—", "—", "—", "—"],
     ["Vertrouwenselementen", "Beperkt", "Testimonials, garantie",
-     "Familiebedrijf sinds 1983", "145 jaar historiek, awards",
-     "80 jaar historiek, design awards"],
+     "Sinds 1983", "145 jaar historiek, awards",
+     "80 jaar historiek, design awards",
+     "20 jaar garantie, CE, Belgische productie"],
 ]
 
-col_widths = [33 * mm, 27 * mm, 27 * mm, 27 * mm, 27 * mm, 27 * mm]
+col_widths = [30 * mm, 22 * mm, 22 * mm, 22 * mm, 22 * mm, 22 * mm, 26 * mm]
 table_data = [[Paragraph(c, styles["TableHead"]) for c in comp_header]]
 for row in comp_rows:
     table_data.append([Paragraph(row[0], styles["TableCellBold"])] +
@@ -364,7 +369,7 @@ story.append(Paragraph(
     "configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt en — volgens eigen "
     "bronnen — een sterke toename in leads optekent.", styles["BodySmall"]))
 story.append(Spacer(1, 6))
-story.append(screenshot_placeholder("Voorbeeldschermen: miniflat.com / veranco.be / winsol.eu / harol.com", height=55))
+story.append(screenshot_placeholder("Voorbeeldschermen: miniflat.com / veranco.be / winsol.eu / harol.com / ovalux.com", height=55))
 
 # =========================================================
 # 6. DOELGROEP
