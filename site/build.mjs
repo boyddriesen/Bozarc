@@ -124,7 +124,7 @@ function page(renderedDocs) {
       <div>
         <p class="label">Website & marketing analysis</p>
         <h1>Een deelbare researchpagina uit de GitHub-repo.</h1>
-        <p class="intro">Deze microsite bundelt de bevindingen, keyword research, concurrentiebenchmark en downloads voor Bozarc. GitHub blijft de bron; Cloudflare Pages publiceert de laatste versie.</p>
+        <p class="intro">Deze microsite bundelt de bevindingen, keyword research, concurrentiebenchmark en downloads voor Bozarc. GitHub blijft de bron; Cloudflare Workers publiceert de laatste versie.</p>
         <div class="actions">
           <a class="button primary" href="#aanbevelingen">Bekijk aanbevelingen</a>
           <a class="button" href="reports/bozarc_keyword_research.xlsx">Download Excel</a>
@@ -136,7 +136,7 @@ function page(renderedDocs) {
           <li>Focus op aluminium carports, terrasoverkappingen en mobilhome/caravan carports.</li>
           <li>Concurrentiedruk komt van MiniFlat, Veranco, Winsol, Harol en Ovalux.</li>
           <li>Negatives en leadkwaliteit moeten vooraf besproken worden.</li>
-          <li>Cloudflare Pages maakt hiervan een automatisch updatebare webpagina.</li>
+          <li>Cloudflare Workers maakt hiervan een automatisch updatebare webpagina.</li>
         </ul>
       </aside>
     </section>
