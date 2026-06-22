@@ -1,12 +1,12 @@
 {
-  "name": "bozarc-research",
+  "name": "bozarc",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "node site/build.mjs",
     "preview": "npx wrangler pages dev site/dist --compatibility-date=2026-06-22",
-    "deploy": "npm run build && npx wrangler pages deploy site/dist --project-name bozarc-research"
+    "deploy": "npm run build && npx wrangler pages deploy site/dist --project-name bozarc"
   },
   "engines": {
     "node": ">=20"
