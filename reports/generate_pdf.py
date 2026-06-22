@@ -207,14 +207,20 @@ story.append(KeepTogether([
 story.append(PageBreak())
 story += section_kicker("3", "De huidige marketingkanalen")
 
-story.append(Paragraph("Google Ads — het belangrijkste kanaal", styles["H2"]))
+story.append(Paragraph("Paid media en service fee — eerst juist uitsplitsen", styles["H2"]))
 story.append(Paragraph(
-    "Bozarc investeert momenteel een aanzienlijk budget van ongeveer <b>€10.000 à €15.000 per maand</b> "
-    "in Google Ads, en dat kanaal levert vandaag het grootste deel van de leads. De resultaten liggen "
-    "echter merkbaar lager dan voorheen.", styles["Body"]))
+    "Belangrijke nuance: de eerder vermelde <b>± €15.000 per maand</b> is geen zuivere Google Ads-spend. "
+    "Dit bedrag is een combinatie van Google Ads, Meta Ads, Bing Ads en service fee. De service fee "
+    "bedraagt <b>€4.750 excl. btw</b>. De detailuitsplitsing van Philippe moet nog in Excel gezet worden "
+    "voordat we harde conclusies trekken over budgetverdeling per kanaal.", styles["Body"]))
+story.append(Paragraph(
+    "Daardoor kunnen we vandaag niet correct zeggen dat het volledige bedrag naar Google Ads gaat, of dat "
+    "Google Ads alleen verantwoordelijk is voor het lagere rendement. De analyse moet per kanaal gebeuren: "
+    "Google Ads, Bing Ads, Meta Ads, service fee, tracking en wat er na de klik op de website gebeurt.",
+    styles["Body"]))
 story.append(callout(
-    "Onze inschatting: dit heeft minder te maken met het kanaal zelf, en meer met wat er na de klik "
-    "gebeurt. Een verouderde, verwarrende website converteert duur betaald verkeer minder goed — "
+    "Onze inschatting: dit heeft niet alleen te maken met het kanaal zelf, maar ook met budgetmix, "
+    "tracking en conversie na de klik. Een verouderde, verwarrende website converteert duur betaald verkeer minder goed — "
     "zeker nu de concurrentie qua uitstraling en gebruiksgemak een stuk verder staat (zie onderdeel 5).",
     "warn"))
 story.append(Spacer(1, 6))
@@ -228,9 +234,11 @@ story.append(bullets([
     "Serres/tuinkamers en B2B-overkappingen zijn aparte 'werelden' qua doelgroep, marge en "
     "beslissingsproces — dit bevestigt het structuurprobleem dat we ook op de website signaleren.",
     "Risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers, "
-    "verkeerde regio's) lijken vandaag niet uitgesloten te zijn als negative keyword.",
-    "Er is geen gedeelde definitie van 'een goede lead' — zonder dat kan het bestaande budget niet "
-    "doelgericht bijgestuurd worden.",
+    "verkeerde regio's) kunnen vooral het rendement van Google/Bing paid search beïnvloeden.",
+    "Meta Ads moet apart beoordeeld worden van organische social media: targeting, creatives, funnel, "
+    "remarketing, leadkwaliteit en bijdrage aan merkvertrouwen.",
+    "Er is geen gedeelde definitie van 'een goede lead' — zonder dat kan de bestaande betaalde budgetmix "
+    "niet doelgericht bijgestuurd worden.",
 ]))
 
 story.append(KeepTogether([
@@ -282,7 +290,7 @@ story.append(Paragraph("Clusters die eerst klantvalidatie nodig hebben", styles[
 story.append(bullets([
     "Serres en tuinkamers — mogelijk andere marge, doelgroep en landingspagina.",
     "B2B-overkappingen — andere koper, langere beslissing, mogelijk aparte salesflow.",
-    "Geo-varianten — servicegebied en showroomstrategie moeten bevestigd worden.",
+    "Regio-/taalvarianten — servicegebied en showroomstrategie moeten bevestigd worden.",
     "Brand searches — mogelijk nuttig defensief, maar het effect op extra leads is onzeker.",
 ]))
 
@@ -426,13 +434,19 @@ recos = [
      "Van puur projectfoto's naar een kanaal dat het merk, de mensen en de werkwijze toont — om "
      "geloofwaardigheid en vertrouwen op te bouwen vóór het eerste contact."),
     ("6. Zet meetbaarheid op poten",
-     "Analytics en conversietracking correct laten opzetten, zodat het bestaande Google Ads-budget "
-     "voortaan onderbouwd kan worden bijgestuurd in plaats van blind ingezet."),
-    ("7. Herstructureer de Google Ads-campagnes op basis van keyword research",
+     "Analytics en conversietracking correct laten opzetten, zodat de bestaande betaalde budgetmix "
+     "onderbouwd kan worden bijgestuurd. De ± €15.000 per maand moet uitgesplitst worden in Google Ads, "
+     "Meta Ads, Bing Ads en service fee. De service fee bedraagt €4.750 excl. btw; de mediaverdeling uit "
+     "Philippe's detail moet nog in Excel verwerkt worden."),
+    ("7. Herstructureer paid search op basis van keyword research",
      "De keyword research (onderdeel 4) bevestigt drie testbare clusters en een lijst risicovolle "
-     "zoektermen die mee het dalende rendement verklaren. Negatives meteen installeren, klein starten "
+     "zoektermen die mee het dalende rendement van Google/Bing paid search kunnen verklaren. Negatives meteen installeren, klein starten "
      "met de drie gevalideerde clusters, en samen met Bozarc een definitie van 'een goede lead' "
-     "vastleggen vóór verder op te schalen. Dit kan parallel lopen met de merk-/strategieworkshop."),
+     "vastleggen vóór verder op te schalen. Dit kan parallel lopen met de merk-/strategieworkshop en "
+     "de Excel-uitsplitsing van het advertentiebudget."),
+    ("8. Maak de audit productbreed voor SEO, SEA, GEO en AEO",
+     "De eerste advertentietest mag smal starten, maar de audit zelf moet alle huidige productfamilies "
+     "meenemen: carports, terrasoverkappingen, Nova, Vista, serres/tuinkamers en B2B-overkappingen."),
 ]
 
 for title, body in recos:
@@ -449,7 +463,7 @@ for title, body in recos:
 story.append(Spacer(1, 8))
 story += section_kicker("8", "Voorgestelde volgende stap")
 story.append(callout(
-    "We stellen voor om te starten met de gezamenlijke merk- en strategieworkshop. Dat geeft ons "
+    "We stellen voor om te starten met de gezamenlijke merk- en strategieworkshop plus productprioriteitenmatrix. Dat geeft ons "
     "scherpe, gedragen doelstellingen om een concreet plan van aanpak voor website en marketing op "
     "te bouwen — afgestemd op wat Bozarc op korte en lange termijn wil bereiken.", "good"))
 
