@@ -1,4 +1,4 @@
-# 3. Bozarc tegenover de markt
+# 4. Bozarc tegenover de markt
 
 Vier directe concurrenten — [MiniFlat](https://miniflat.com/), [Veranco](https://www.veranco.be/), [Winsol](https://winsol.eu/nl-be) en [Harol](https://www.harol.com/) — laten zien waar de markt vandaag staat. Bij elk van hen valt een gelijkaardig patroon op: heldere, productgerichte navigatie, een warme/lifestyle-gerichte tone of voice, en laagdrempelige online tools die bezoekers meteen betrekken vóór er een offerte wordt aangevraagd.
 

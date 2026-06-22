@@ -1,4 +1,4 @@
-# 4. Doelgroep en seizoenspatroon
+# 5. Doelgroep en seizoenspatroon
 
 ## B2C — particulieren
 

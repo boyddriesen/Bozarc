@@ -162,9 +162,10 @@ story.append(Paragraph(
     styles["Body"]))
 story.append(Spacer(1, 6))
 story.append(callout(
-    "Leeswijzer: onderdeel 2 en 3 bekijken de huidige website en marketingkanalen, onderdeel 4 "
-    "benchmarkt Bozarc tegenover vier directe concurrenten, onderdeel 5 schetst de doelgroep, en "
-    "onderdeel 6 bundelt de concrete aanbevelingen.", "info"))
+    "Leeswijzer: onderdeel 2 en 3 bekijken de huidige website en marketingkanalen, onderdeel 4 gaat "
+    "dieper in op de keyword research, onderdeel 5 benchmarkt Bozarc tegenover vier directe "
+    "concurrenten, onderdeel 6 schetst de doelgroep, en onderdeel 7 bundelt de concrete aanbevelingen.",
+    "info"))
 story.append(Spacer(1, 14))
 
 # =========================================================
@@ -214,36 +215,106 @@ story.append(Paragraph(
 story.append(callout(
     "Onze inschatting: dit heeft minder te maken met het kanaal zelf, en meer met wat er na de klik "
     "gebeurt. Een verouderde, verwarrende website converteert duur betaald verkeer minder goed — "
-    "zeker nu de concurrentie qua uitstraling en gebruiksgemak een stuk verder staat (zie onderdeel 4).",
+    "zeker nu de concurrentie qua uitstraling en gebruiksgemak een stuk verder staat (zie onderdeel 5).",
     "warn"))
 story.append(Spacer(1, 6))
 
-story.append(Paragraph("Social media — aanwezig, maar onbenut", styles["H2"]))
-story.append(screenshot_placeholder("Schermafbeelding: Facebook/Instagram-posts van Bozarc"))
-story.append(Spacer(1, 8))
+story.append(Paragraph("Aanvullende bevindingen: keyword research", styles["H2"]))
 story.append(Paragraph(
-    "Bozarc is actief op Facebook, Instagram en LinkedIn, maar de invulling blijft beperkt tot het "
-    "delen van projectfoto's met een korte, vaak feitelijke of seizoensgebonden tekst. Er is geen "
-    "duidelijke tone of voice of merkpersoonlijkheid merkbaar.", styles["Body"]))
+    "Een eerste keyword research (onderdeel 4) bevestigt en verscherpt dit beeld.", styles["Body"]))
 story.append(bullets([
-    "Posts genereren weinig interactie buiten de betrokken klant en hun directe omgeving.",
-    "Social media wordt nu louter transactioneel ingezet (project tonen), niet als kanaal om "
-    "vertrouwen, expertise en 'de mensen achter het merk' te tonen.",
-    "Net dat laatste is wat potentiële klanten over de streep trekt om voor Bozarc te kiezen "
-    "boven een concurrent.",
+    "De zoekvraag bevestigt drie sterke, aparte clusters: aluminium carports, terrasoverkappingen "
+    "en mobilhome/caravan carports als eigen niche met eigen zoektaal.",
+    "Serres/tuinkamers en B2B-overkappingen zijn aparte 'werelden' qua doelgroep, marge en "
+    "beslissingsproces — dit bevestigt het structuurprobleem dat we ook op de website signaleren.",
+    "Risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers, "
+    "verkeerde regio's) lijken vandaag niet uitgesloten te zijn als negative keyword.",
+    "Er is geen gedeelde definitie van 'een goede lead' — zonder dat kan het bestaande budget niet "
+    "doelgericht bijgestuurd worden.",
 ]))
 
-story.append(Paragraph("Meetbaarheid", styles["H2"]))
-story.append(Paragraph(
-    "Er is momenteel geen toegang tot Google Analytics of Search Console om de resultaten van de "
-    "website en de advertentiecampagnes objectief te onderbouwen. Dit wordt meegenomen als aandachtspunt "
-    "in de aanbevelingen.", styles["Body"]))
+story.append(KeepTogether([
+    Paragraph("Social media — aanwezig, maar onbenut", styles["H2"]),
+    screenshot_placeholder("Schermafbeelding: Facebook/Instagram-posts van Bozarc"),
+    Spacer(1, 8),
+    Paragraph(
+        "Bozarc is actief op Facebook, Instagram en LinkedIn, maar de invulling blijft beperkt tot het "
+        "delen van projectfoto's met een korte, vaak feitelijke of seizoensgebonden tekst. Er is geen "
+        "duidelijke tone of voice of merkpersoonlijkheid merkbaar.", styles["Body"]),
+    bullets([
+        "Posts genereren weinig interactie buiten de betrokken klant en hun directe omgeving.",
+        "Social media wordt nu louter transactioneel ingezet (project tonen), niet als kanaal om "
+        "vertrouwen, expertise en 'de mensen achter het merk' te tonen.",
+        "Net dat laatste is wat potentiële klanten over de streep trekt om voor Bozarc te kiezen "
+        "boven een concurrent.",
+    ]),
+]))
+story.append(Spacer(1, 6))
+story.append(KeepTogether([
+    Paragraph("Meetbaarheid", styles["H2"]),
+    Paragraph(
+        "Er is momenteel geen toegang tot Google Analytics of Search Console om de resultaten van de "
+        "website en de advertentiecampagnes objectief te onderbouwen. Dit wordt meegenomen als aandachtspunt "
+        "in de aanbevelingen.", styles["Body"]),
+]))
 
 # =========================================================
-# 4. CONCURRENTIE-BENCHMARK
+# 4. KEYWORD RESEARCH
 # =========================================================
 story.append(PageBreak())
-story += section_kicker("4", "Bozarc tegenover de markt")
+story += section_kicker("4", "Keyword research")
+story.append(Paragraph(
+    "Een eerste keyword research (autosuggest-analyse + clustering) dient als focuskaart voor het "
+    "klantgesprek: welke projecten wil Bozarc actief aantrekken, welke zoekintenties passen niet, en "
+    "welke clusters testen we eerst met meetbare leadkwaliteit? Het volledige besprekingsdocument en "
+    "de werkmap zitten als bijlage bij dit rapport.", styles["Body"]))
+story.append(Spacer(1, 8))
+
+story.append(Paragraph("Aanbevolen startclusters", styles["H2"]))
+story.append(bullets([
+    "<b>Aluminium carports</b> — bv. 'carport aluminium belgie', 'carport op maat', 'carport offerte'.",
+    "<b>Terrasoverkappingen</b> — bv. 'terrasoverkapping aluminium', 'terrasoverkapping met glazen wanden'.",
+    "<b>Mobilhome/caravan carports</b> — een eigen niche met eigen zoektaal ('carport mobilhome', "
+    "'carport caravan'), mogelijk winstgevend genoeg om apart te testen.",
+]))
+
+story.append(Paragraph("Clusters die eerst klantvalidatie nodig hebben", styles["H2"]))
+story.append(bullets([
+    "Serres en tuinkamers — mogelijk andere marge, doelgroep en landingspagina.",
+    "B2B-overkappingen — andere koper, langere beslissing, mogelijk aparte salesflow.",
+    "Geo-varianten — servicegebied en showroomstrategie moeten bevestigd worden.",
+    "Brand searches — mogelijk nuttig defensief, maar het effect op extra leads is onzeker.",
+]))
+
+story.append(callout(
+    "Voorlopige negatives (vooraf uit te sluiten): goedkoop, budget, bouwpakket, zelfbouw, "
+    "tweedehands, outlet, promo, hubo, gamma, brico, gumax, groningen, rotterdam, schoonmaken, "
+    "verwijderen, vacature. Te bevestigen met Bozarc of er termen tussen staan die toch toegelaten "
+    "moeten worden.", "warn"))
+story.append(Spacer(1, 6))
+
+story.append(Paragraph("Wat nog te bevestigen is met Bozarc", styles["H2"]))
+story.append(bullets([
+    "Welke productcategorie heeft de hoogste marge?",
+    "Welke projecten wil Bozarc meer, minder of helemaal niet?",
+    "Welke regio's zijn commercieel interessant?",
+    "Wat is een goede lead waard, en wat is de lead-to-sale close rate?",
+]))
+
+story.append(Paragraph("Voorstel voor eerste test", styles["H2"]))
+story.append(bullets([
+    "Campagne: Carports, Campagne: Terrasoverkappingen, en een apart geteste advertentiegroep voor "
+    "mobilhome/caravan carports.",
+    "Negatives vooraf installeren.",
+    "Leads niet alleen meten op aantal, maar op kwaliteit en offertewaarde — niet meteen breed starten "
+    "met alle clusters tegelijk.",
+]))
+
+# =========================================================
+# 5. CONCURRENTIE-BENCHMARK
+# =========================================================
+story.append(PageBreak())
+story += section_kicker("5", "Bozarc tegenover de markt")
 story.append(Paragraph(
     "Vier directe concurrenten — MiniFlat, Veranco, Winsol en Harol — laten zien waar de markt vandaag "
     "staat. Bij elk van hen valt een gelijkaardig patroon op: heldere, productgerichte navigatie, een "
@@ -296,10 +367,10 @@ story.append(Spacer(1, 6))
 story.append(screenshot_placeholder("Voorbeeldschermen: miniflat.com / veranco.be / winsol.eu / harol.com", height=55))
 
 # =========================================================
-# 5. DOELGROEP
+# 6. DOELGROEP
 # =========================================================
 story.append(PageBreak())
-story += section_kicker("5", "Doelgroep en seizoenspatroon")
+story += section_kicker("6", "Doelgroep en seizoenspatroon")
 
 story.append(Paragraph("B2C — particulieren", styles["H2"]))
 story.append(bullets([
@@ -323,10 +394,10 @@ story.append(callout(
     "onderscheiden.", "info"))
 
 # =========================================================
-# 6. AANBEVELINGEN
+# 7. AANBEVELINGEN
 # =========================================================
 story.append(PageBreak())
-story += section_kicker("6", "Aanbevelingen")
+story += section_kicker("7", "Aanbevelingen")
 story.append(Paragraph(
     "Op basis van deze analyse stellen we een gefaseerde aanpak voor, die start bij het merk zelf "
     "en van daaruit vertaalt naar website en marketing.", styles["Body"]))
@@ -352,6 +423,11 @@ recos = [
     ("6. Zet meetbaarheid op poten",
      "Analytics en conversietracking correct laten opzetten, zodat het bestaande Google Ads-budget "
      "voortaan onderbouwd kan worden bijgestuurd in plaats van blind ingezet."),
+    ("7. Herstructureer de Google Ads-campagnes op basis van keyword research",
+     "De keyword research (onderdeel 4) bevestigt drie testbare clusters en een lijst risicovolle "
+     "zoektermen die mee het dalende rendement verklaren. Negatives meteen installeren, klein starten "
+     "met de drie gevalideerde clusters, en samen met Bozarc een definitie van 'een goede lead' "
+     "vastleggen vóór verder op te schalen. Dit kan parallel lopen met de merk-/strategieworkshop."),
 ]
 
 for title, body in recos:
@@ -363,10 +439,10 @@ for title, body in recos:
     story.append(KeepTogether(block))
 
 # =========================================================
-# 7. VOLGENDE STAPPEN
+# 8. VOLGENDE STAPPEN
 # =========================================================
 story.append(Spacer(1, 8))
-story += section_kicker("7", "Voorgestelde volgende stap")
+story += section_kicker("8", "Voorgestelde volgende stap")
 story.append(callout(
     "We stellen voor om te starten met de gezamenlijke merk- en strategieworkshop. Dat geeft ons "
     "scherpe, gedragen doelstellingen om een concreet plan van aanpak voor website en marketing op "

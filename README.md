@@ -8,10 +8,14 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (terrasove
 
 1. [Website-analyse](docs/01-website-analyse.md) — huidige staat van bozarc.be
 2. [Marketingkanalen](docs/02-marketingkanalen.md) — Google Ads, social media, meetbaarheid
-3. [Concurrentie-benchmark](docs/03-concurrentie-benchmark.md) — Bozarc tegenover MiniFlat, Veranco, Winsol, Harol
-4. [Doelgroep en seizoenspatroon](docs/04-doelgroep-seizoenspatroon.md) — B2C en B2B
-5. [Aanbevelingen](docs/05-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
+3. [Keyword research](docs/03-keyword-research.md) — besprekingsdocument met clusters, negatives en testplan voor Google Ads/SEO
+4. [Concurrentie-benchmark](docs/04-concurrentie-benchmark.md) — Bozarc tegenover MiniFlat, Veranco, Winsol, Harol
+5. [Doelgroep en seizoenspatroon](docs/05-doelgroep-seizoenspatroon.md) — B2C en B2B
+6. [Aanbevelingen](docs/06-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
 
-## Deliverable
+## Reports
 
-Het volledige rapport is ook beschikbaar als pdf: [`Bozarc_Analyse_Website_Marketing.pdf`](Bozarc_Analyse_Website_Marketing.pdf) (gegenereerd via [`generate_pdf.py`](generate_pdf.py)). De pdf bevat een aantal gelabelde plaatshouders voor schermafbeeldingen die nog manueel toegevoegd moeten worden.
+Bijkomend onderzoeks- en deliverable-materiaal staat in [`reports/`](reports/):
+
+- [`Bozarc_Analyse_Website_Marketing.pdf`](reports/Bozarc_Analyse_Website_Marketing.pdf) — het volledige rapport als pdf (gegenereerd via [`generate_pdf.py`](reports/generate_pdf.py)). Bevat een aantal gelabelde plaatshouders voor schermafbeeldingen die nog manueel toegevoegd moeten worden.
+- [`bozarc_keyword_research.xlsx`](reports/bozarc_keyword_research.xlsx) — de volledige keyword-werkmap (clusters, autosuggest-rondes, negatives, sources) waarop onderdeel 3 is gebaseerd.

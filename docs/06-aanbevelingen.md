@@ -1,4 +1,4 @@
-# 5. Aanbevelingen
+# 6. Aanbevelingen
 
 Op basis van deze analyse stellen we een gefaseerde aanpak voor, die start bij het merk zelf en van daaruit vertaalt naar website en marketing.
 
@@ -19,6 +19,9 @@ Van puur projectfoto's naar een kanaal dat het merk, de mensen en de werkwijze t
 
 ## 6. Zet meetbaarheid op poten
 Analytics en conversietracking correct laten opzetten, zodat het bestaande Google Ads-budget voortaan onderbouwd kan worden bijgestuurd in plaats van blind ingezet.
+
+## 7. Herstructureer de Google Ads-campagnes op basis van keyword research
+De [keyword research](03-keyword-research.md) bevestigt drie testbare clusters (aluminium carports, terrasoverkappingen, mobilhome/caravan carports) en een lijst risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers, verkeerde regio's) die vandaag waarschijnlijk mee het dalende rendement op het bestaande budget verklaren. Voorstel: negatives meteen installeren, klein starten met de drie gevalideerde clusters, en samen met Bozarc een definitie van "een goede lead" vastleggen (producttype, regio, offertewaarde, gewonnen/verloren, marge) vóór verder op te schalen. Dit kan parallel lopen met de merk-/strategieworkshop — het is een snelle, onderbouwde verbetering op een kanaal dat vandaag al het grootste deel van het budget opslorpt.
 
 ---
 

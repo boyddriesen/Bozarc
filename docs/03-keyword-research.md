@@ -1,7 +1,9 @@
-# BOzARC Keyword Research - Besprekingsdocument
+# 3. Keyword research — besprekingsdocument
 
-Datum: 2026-06-22  
+Datum: 2026-06-22
 Doel: bepalen welke zoekthema's BOzARC eerst wil testen, uitsluiten of parkeren voor Google Ads/SEO.
+
+De bijhorende werkmap met alle keyword-clusters, autosuggest-data en negatives staat in [`reports/bozarc_keyword_research.xlsx`](../reports/bozarc_keyword_research.xlsx). De kernconclusies hieruit zijn al verwerkt in [marketingkanalen](02-marketingkanalen.md) en [aanbevelingen](06-aanbevelingen.md); dit document is de volledige onderbouwing.
 
 ## 1. Executive Summary
 
