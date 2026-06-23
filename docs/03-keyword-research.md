@@ -33,6 +33,7 @@ Dit document gaat niet over "welke keywords hebben we gevonden?" maar over:
 | Goedkoop, bouwpakket, tweedehands, outlet en verkeerde regio's zijn risicovol | Vooraf als negatives behandelen | Uitsluiten/review |
 | Brand searches zoals `bozarc offerte` zijn navigerend | Apart bekijken, niet mengen met non-brand acquisitie | Review |
 | Ovalux is een geverifieerde Waalse/Franstalige concurrent | Relevant als concurrentiebenchmark en als mogelijke competitor negative | Review/uitsluiten |
+| Nederland en Frankrijk zijn al actieve betaalde regio's (Philippe's budget-Excel) | Eerder ten onrechte als "foute regio" behandeld in de negatives; NL is 100% mobilhome/caravan-scope | Bevestigd |
 
 ## 4. Wat We Nog Niet Weten
 
@@ -91,31 +92,44 @@ Zijn dit winstgevende nicheprojecten die BOzARC actief wil aantrekken?
 | Serres en tuinkamers | Mogelijk andere marge, doelgroep en landingspagina |
 | B2B-overkappingen | Andere koper, langere beslissing, mogelijk aparte salesflow |
 | Accessoires en toepassingen | Glazen wanden, zonwering, windschermen, jacuzzi-overkappingen en opties kunnen upsell zijn of aparte zoekintentie |
-| Regio-/taalvarianten | Servicegebied en showroomstrategie moeten bevestigd worden |
+| Regio-/taalvarianten | Servicegebied en showroomstrategie binnen België moeten nog bevestigd worden; Nederland (mobilhome/caravan) en Frankrijk zijn al bevestigde betaalde regio's |
 | Brand searches | Mogelijk nuttig defensief, maar incrementality onzeker |
 | Opties zoals glazen wanden/zonwering | Kan upsell zijn, maar ook losse lage-intent traffic aantrekken |
 
 ## 7. Negatives Die We Waarschijnlijk Vooraf Willen Instellen
 
-Voorlopige uitsluitingen:
+Voorlopige uitsluitingen (volledige lijst, gesynchroniseerd met de `Negatives`-sheet in de Excel):
 
+- `gratis`
 - `goedkoop`
 - `budget`
+- `tweedehands`
+- `occasion`
 - `bouwpakket`
 - `zelfbouw`
-- `tweedehands`
-- `outlet`
-- `promo`
+- `zelf maken`
 - `hubo`
 - `gamma`
 - `brico`
+- `ikea`
+- `zonnepanelen`
+- `solar`
+- `vacature`
+- `job`
+- `werk`
+- `afbeelding uploaden`
+- `bestand uploaden`
+- `promo`
+- `promotie`
+- `outlet`
 - `gumax`
 - `ovalux`
 - `groningen`
 - `rotterdam`
 - `schoonmaken`
 - `verwijderen`
-- `vacature`
+
+**Correctie regio-scope:** `groningen` en `rotterdam` staan hier als negative voor de **algemene** campagnes (carports algemeen, terrasoverkappingen, serres, B2B). Voor de **Vehicle Carports-cluster** (mobilhome/caravan) zijn deze Nederlandse steden net wél relevant — Philippe's budget-Excel bevestigt actieve Google SEA-spend in Nederland die 100% op mobilhome/caravan-carports focust. Deze geo-varianten zijn toegevoegd aan de `Vehicle Carports`-sheet.
 
 Bespreekvraag:
 Zijn er termen in deze lijst die BOzARC toch wil toelaten?
@@ -148,7 +162,7 @@ Bespreek:
 - Tweedehands
 - Concurrent/retail
 - Waalse concurrenten zoals Ovalux
-- Verkeerde regio's
+- Verkeerde regio's (let op: Nederland is voor de mobilhome/caravan-cluster wél een bevestigde regio)
 - Onderhoud/verwijdering
 
 ### 25-35 min: Meetmodel

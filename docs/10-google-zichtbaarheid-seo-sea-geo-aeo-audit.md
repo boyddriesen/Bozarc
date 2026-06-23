@@ -31,6 +31,7 @@ Deze audit gebruikt publieke zoekresultaat-steekproeven op 2026-06-23, BOzARC pr
 | Mobilhome carport | `carport mobilhome belgie aluminium` | BOzARC-pagina komt sterk naar boven bij specifieke intentie | Kansrijke niche: aparte SEO/SEA-cluster behouden |
 | Caravan carport | `carport caravan belgie aluminium` | BOzARC heeft een specifieke pagina en verschijnt in zoekresultaten | Kansrijke niche, maar aparte FAQ/voorbeelden toevoegen |
 | Terrasoverkapping | `terrasoverkapping aluminium belgie` | BOzARC zichtbaar, maar Winsol, Harol, Renson, Verano en Veranco zijn sterk | Hier is extra autoriteit, vergelijking en keuzehulp nodig |
+| Pergola / veranda | `pergola op maat belgie`, `veranda op maat belgie prijssimulator` | MiniFlat verschijnt hier sterk (naast Ekstravert, Willems Veranda's, Ostyn, Veranda Janssens), maar niet bij generieke carport/terrasoverkapping-termen — hun aanbod is veranda/pergola/woonuitbreiding, geen carports | MiniFlat is relevant als pergola/veranda-benchmark (prijssimulator, 3D-configurator), niet als carport-concurrent |
 | Glazen wanden | `glazen wand terras overkapping belgie` | Non-brand resultaten tonen o.a. Tuinmaximaal, Winsol en Verano; BOzARC is sterker op branded/exacte combinaties | Positioneer als BOzARC-upsell en voorkom losse prijszoeker-leads |
 | Jacuzzi-overkapping | `jacuzzi overkapping belgie aluminium` | Zoekresultaten tonen jacuzzi-/spa- en retailspelers; BOzARC verschijnt ook via oudere/nieuwsachtige pagina's | Maak een actuele productlandingspagina belangrijker dan oude blog/tag-resultaten |
 | Zonwering | `zonwering terrasoverkapping belgie` | Tuinmaximaal, Verano en zonweringsspecialisten zijn zichtbaar | SEA alleen starten indien BOzARC losse accessoireleads wil; anders als upsell/SEO-content |
@@ -91,3 +92,6 @@ De eerdere keyword research koos terecht een pragmatische start met carports, te
 - Renson: https://renson.net/nl-be/producten/terrasoverkapping
 - AC Systems: https://www.acsystems.be/
 - Easy-Matic: https://www.easy-matic.be/
+- MiniFlat: https://miniflat.com/
+- MiniFlat pergola op maat: https://miniflat.com/pergola-op-maat/
+- MiniFlat veranda-prijssimulator: https://miniflat.com/veranda-prijs-berekenen/

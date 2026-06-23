@@ -207,16 +207,48 @@ story.append(KeepTogether([
 story.append(PageBreak())
 story += section_kicker("3", "De huidige marketingkanalen")
 
-story.append(Paragraph("Paid media en service fee — eerst juist uitsplitsen", styles["H2"]))
+story.append(Paragraph("Paid media en service fee — volledige uitsplitsing", styles["H2"]))
 story.append(Paragraph(
-    "Belangrijke nuance: de eerder vermelde <b>± €15.000 per maand</b> is geen zuivere Google Ads-spend. "
-    "Dit bedrag is een combinatie van Google Ads, Meta Ads, Bing Ads en service fee. De service fee "
-    "bedraagt <b>€4.750 excl. btw</b>. De detailuitsplitsing van Philippe moet nog in Excel gezet worden "
-    "voordat we harde conclusies trekken over budgetverdeling per kanaal.", styles["Body"]))
+    "Correctie: het eerder vermelde ± €15.000 per maand was een onderschatting op basis van een "
+    "mondelinge inschatting. Philippe's detail-Excel geeft de echte uitsplitsing:", styles["Body"]))
+
+budget_header = ["Kanaal", "Regio", "Bedrag/maand"]
+budget_rows = [
+    ["Only Humans (service fee)", "BE/NL/FR", "€4.750"],
+    ["Google SEA", "België (Vlaanderen)", "€6.000"],
+    ["Google SEA", "België (Wallonië)", "€2.250"],
+    ["Google SEA", "Nederland (mobilhome/caravan)", "€2.000"],
+    ["Google SEA", "Frankrijk (variabel)", "€2.000"],
+    ["Bing", "België", "€750"],
+    ["Meta", "België (Vlaanderen)", "€2.375"],
+    ["Meta", "België (Wallonië, variabel)", "€1.000 à €2.000"],
+]
+budget_table_data = [[Paragraph(c, styles["TableHead"]) for c in budget_header]]
+for row in budget_rows:
+    budget_table_data.append([Paragraph(c, styles["TableCell"]) for c in row])
+budget_table_data.append([
+    Paragraph("Totaal", styles["TableCellBold"]), Paragraph("", styles["TableCell"]),
+    Paragraph("€21.125 à €22.125", styles["TableCellBold"]),
+])
+budget_table = Table(budget_table_data, colWidths=[70 * mm, 65 * mm, 35 * mm], repeatRows=1)
+budget_table.setStyle(TableStyle([
+    ("BACKGROUND", (0, 0), (-1, 0), INK),
+    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ("GRID", (0, 0), (-1, -1), 0.6, LINE),
+    ("TOPPADDING", (0, 0), (-1, -1), 5),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+    ("LEFTPADDING", (0, 0), (-1, -1), 6),
+    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+    ("ROWBACKGROUNDS", (0, 1), (-1, -2), [colors.white, BOX_BG]),
+    ("BACKGROUND", (0, -1), (-1, -1), ACCENT_SOFT),
+]))
+story.append(budget_table)
+story.append(Spacer(1, 8))
 story.append(Paragraph(
-    "Daardoor kunnen we vandaag niet correct zeggen dat het volledige bedrag naar Google Ads gaat, of dat "
-    "Google Ads alleen verantwoordelijk is voor het lagere rendement. De analyse moet per kanaal gebeuren: "
-    "Google Ads, Bing Ads, Meta Ads, service fee, tracking en wat er na de klik op de website gebeurt.",
+    "Dit is dus niet zuivere Google Ads-spend, en het totaal ligt 6 à 7.000 euro hoger dan de eerder "
+    "vermelde ±€15.000. Belangrijke nieuwe vaststelling: er loopt vandaag al actieve Google SEA-spend "
+    "in <b>Nederland</b> (100% gericht op mobilhome/caravan-carports) en in <b>Frankrijk</b> — dit was tot "
+    "nu toe niet meegenomen in de doelgroep- of keyword-analyse, die uitgingen van een Belgisch-only scope.",
     styles["Body"]))
 story.append(callout(
     "Onze inschatting: dit heeft niet alleen te maken met het kanaal zelf, maar ook met budgetmix, "
@@ -233,8 +265,11 @@ story.append(bullets([
     "en mobilhome/caravan carports als eigen niche met eigen zoektaal.",
     "Serres/tuinkamers en B2B-overkappingen zijn aparte 'werelden' qua doelgroep, marge en "
     "beslissingsproces — dit bevestigt het structuurprobleem dat we ook op de website signaleren.",
-    "Risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers, "
-    "verkeerde regio's) kunnen vooral het rendement van Google/Bing paid search beïnvloeden.",
+    "Risicovolle zoektermen (prijszoekers, doe-het-zelf/tweedehands, concurrenten/retailers) "
+    "kunnen vooral het rendement van Google/Bing paid search beïnvloeden.",
+    "Correctie regio-scope: Nederland (mobilhome/caravan) en Frankrijk zijn bevestigde actieve regio's "
+    "(zie het budgetoverzicht hierboven) — de keyword research ging initieel ten onrechte uit van "
+    "Belgisch-only.",
     "Meta Ads moet apart beoordeeld worden van organische social media: targeting, creatives, funnel, "
     "remarketing, leadkwaliteit en bijdrage aan merkvertrouwen.",
     "Er is geen gedeelde definitie van 'een goede lead' — zonder dat kan de bestaande betaalde budgetmix "
@@ -290,15 +325,18 @@ story.append(Paragraph("Clusters die eerst klantvalidatie nodig hebben", styles[
 story.append(bullets([
     "Serres en tuinkamers — mogelijk andere marge, doelgroep en landingspagina.",
     "B2B-overkappingen — andere koper, langere beslissing, mogelijk aparte salesflow.",
-    "Regio-/taalvarianten — servicegebied en showroomstrategie moeten bevestigd worden.",
+    "Regio-/taalvarianten — servicegebied binnen België moet nog bevestigd worden; Nederland "
+    "(mobilhome/caravan) en Frankrijk zijn al bevestigde betaalde regio's.",
     "Brand searches — mogelijk nuttig defensief, maar het effect op extra leads is onzeker.",
 ]))
 
 story.append(callout(
-    "Voorlopige negatives (vooraf uit te sluiten): goedkoop, budget, bouwpakket, zelfbouw, "
-    "tweedehands, outlet, promo, hubo, gamma, brico, gumax, ovalux, groningen, rotterdam, schoonmaken, "
-    "verwijderen, vacature. Te bevestigen met Bozarc of er termen tussen staan die toch toegelaten "
-    "moeten worden.", "warn"))
+    "Voorlopige negatives (vooraf uit te sluiten, 28 termen): gratis, goedkoop, budget, tweedehands, "
+    "occasion, bouwpakket, zelfbouw, zelf maken, hubo, gamma, brico, ikea, zonnepanelen, solar, "
+    "vacature, job, werk, afbeelding/bestand uploaden, promo, promotie, outlet, gumax, ovalux, "
+    "groningen, rotterdam, schoonmaken, verwijderen. Groningen/rotterdam gelden enkel voor de "
+    "algemene campagnes — voor de mobilhome/caravan-cluster is Nederland net een bevestigde regio.",
+    "warn"))
 story.append(Spacer(1, 6))
 
 story.append(Paragraph("Wat nog te bevestigen is met Bozarc", styles["H2"]))
@@ -374,8 +412,11 @@ story.append(comp_table)
 story.append(Spacer(1, 10))
 story.append(Paragraph(
     "MiniFlat springt er specifiek uit: een jong, sterk online-minded merk met een eigen "
-    "configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt en — volgens eigen "
-    "bronnen — een sterke toename in leads optekent.", styles["BodySmall"]))
+    "prijssimulator en 3D-configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt. "
+    "Belangrijke nuance na verificatie: MiniFlat verkoopt geen carports — hun aanbod is veranda's, "
+    "woonuitbreiding, pergola's en poolhouses. Ze zijn dus relevant als branding/UX-benchmark en als "
+    "terrasoverkapping/pergola/veranda-concurrent, niet als directe carport-concurrent.",
+    styles["BodySmall"]))
 story.append(Spacer(1, 6))
 story.append(screenshot_placeholder("Voorbeeldschermen: miniflat.com / veranco.be / winsol.eu / harol.com / ovalux.com", height=55))
 

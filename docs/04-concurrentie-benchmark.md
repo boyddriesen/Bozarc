@@ -12,7 +12,7 @@ Vijf directe concurrenten — [MiniFlat](https://miniflat.com/), [Veranco](https
 
 > 📷 Voorbeeldschermen toevoegen: miniflat.com / veranco.be / winsol.eu / harol.com / ovalux.com
 
-MiniFlat springt er specifiek uit: een jong, sterk online-minded merk met een eigen configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt en — volgens eigen bronnen — een sterke toename in leads optekent.
+MiniFlat springt er specifiek uit: een jong, sterk online-minded merk met een eigen prijssimulator en 3D-configurator, dat daarmee duidelijk een groeiend, jonger publiek aanspreekt. **Belangrijke nuance na verificatie:** MiniFlat verkoopt geen carports — hun aanbod is veranda's, woonuitbreiding, pergola's en poolhouses (actief in België en Duitsland). Ze zijn dus relevant als **branding/UX-benchmark** en specifiek als **terrasoverkapping/pergola/veranda-concurrent** (zie [productbrede concurrentieaudit](09-productbrede-concurrentieaudit.md)), niet als directe carport-concurrent.
 
 Ovalux verdient apart aandacht als Waalse concurrent: het merk heeft Franstalige en Nederlandstalige pagina's, een maatschappelijke zetel in Florenville en een duidelijke offerteflow voor aluminium carports en pergola's. Dat maakt het vooral relevant voor BOzARC wanneer Wallonië, Franstalige zoekwoorden of camping-car/carport-intentie strategisch belangrijk worden.
 
