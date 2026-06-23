@@ -1,5 +1,6 @@
 import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { execSync } from "node:child_process";
 
 const root = process.cwd();
 const outDir = path.join(root, "site", "dist");
@@ -25,7 +26,7 @@ const escapeHtml = (value) =>
   value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
 function inlineMarkdown(value) {
-  return escapeHtml(value)
+  const withMarkdownLinks = escapeHtml(value)
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
@@ -34,6 +35,13 @@ function inlineMarkdown(value) {
         : href;
       return `<a href="${escapeHtml(target)}">${label}</a>`;
     });
+  // Auto-link bare URLs (e.g. plain "Label: https://...") that aren't already
+  // inside an href attribute from the markdown-link replacement above.
+  return withMarkdownLinks.replace(/(?<!href=")(https?:\/\/[^\s<)]+)/g, (url) => {
+    const clean = url.replace(/[.,;:]+$/, "");
+    const trailing = url.slice(clean.length);
+    return `<a href="${clean}" target="_blank" rel="noopener">${clean}</a>${trailing}`;
+  });
 }
 
 function renderTable(lines) {
@@ -111,8 +119,20 @@ async function build() {
   await writeFile(path.join(outDir, "_headers"), "/*\n  X-Content-Type-Options: nosniff\n", "utf8");
 }
 
+function getLastCommitMeta() {
+  try {
+    const author = execSync("git log -1 --format=%an", { cwd: root }).toString().trim();
+    const isoDate = execSync("git log -1 --format=%cI", { cwd: root }).toString().trim();
+    return { author, date: new Date(isoDate) };
+  } catch {
+    return { author: null, date: new Date() };
+  }
+}
+
 function page(renderedDocs) {
-  const updated = new Intl.DateTimeFormat("nl-BE", { dateStyle: "long" }).format(new Date());
+  const { author, date } = getLastCommitMeta();
+  const updated = new Intl.DateTimeFormat("nl-BE", { dateStyle: "long", timeStyle: "short" }).format(date);
+  const updatedLabel = author ? `Laatste aanpassing: ${updated} door ${author}` : `Laatst gebouwd: ${updated}`;
   return `<!doctype html>
 <html lang="nl">
 <head>
@@ -124,7 +144,7 @@ function page(renderedDocs) {
 </head>
 <body>
   <header class="hero">
-    <nav><strong>Bozarc Research Hub</strong><span>Laatst gebouwd: ${updated}</span></nav>
+    <nav><strong>Bozarc Research Hub</strong><span>${updatedLabel}</span></nav>
     <section class="hero-grid">
       <div>
         <p class="label">Website & marketing analysis</p>
