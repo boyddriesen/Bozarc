@@ -15,6 +15,7 @@ const docs = [
 const downloads = [
   ["Bozarc_Analyse_Website_Marketing.pdf", "Strategisch rapport PDF"],
   ["bozarc_keyword_research.xlsx", "Keyword research Excel"],
+  ["bozarc_productboom_mapping.xlsx", "Productboom mapping Excel"],
 ];
 
 const escapeHtml = (value) =>

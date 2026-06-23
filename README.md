@@ -21,6 +21,7 @@ Bijkomend onderzoeks- en deliverable-materiaal staat in [`reports/`](reports/):
 
 - [`Bozarc_Analyse_Website_Marketing.pdf`](reports/Bozarc_Analyse_Website_Marketing.pdf) — het volledige rapport als pdf (gegenereerd via [`generate_pdf.py`](reports/generate_pdf.py)). Bevat een aantal gelabelde plaatshouders voor schermafbeeldingen die nog manueel toegevoegd moeten worden.
 - [`bozarc_keyword_research.xlsx`](reports/bozarc_keyword_research.xlsx) — de volledige keyword-werkmap (clusters, autosuggest-rondes, negatives, sources) waarop onderdeel 3 is gebaseerd.
+- [`bozarc_productboom_mapping.xlsx`](reports/bozarc_productboom_mapping.xlsx) — productboom van de huidige Bozarc-site met hoofdgroep, subpagina, URL, korte samenvatting, verwarringspunt en mogelijke klantvraag.
 
 ## Cloudflare Workers
 
