@@ -37,5 +37,7 @@ npm run build
 Gebruik in Cloudflare Workers:
 
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy --assets site/dist --name bozarc-site`
+- Deploy command: `npx wrangler deploy`
 - Production branch: `main`
+
+De site staat achter een wachtwoord (Cloudflare-secret `SITE_PASSWORD`) — zie [Cloudflare Workers publicatie](docs/07-cloudflare-pages.md).

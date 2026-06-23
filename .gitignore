@@ -1,4 +1,6 @@
 .claude/
 __pycache__/
 *.pyc
+.dev.vars
+site/dist/
 site/dist/
