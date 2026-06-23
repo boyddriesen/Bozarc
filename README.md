@@ -14,6 +14,8 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (carports,
 6. [Aanbevelingen](docs/06-aanbevelingen.md) — gefaseerde aanpak, startend bij een merk-/strategieworkshop
 7. [Cloudflare Workers publicatie](docs/07-cloudflare-pages.md) — automatische microsite vanuit GitHub
 8. [Productbreed auditkader](docs/08-productbreed-auditkader.md) — scope-guard voor alle huidige producten en SEO/SEA/GEO/AEO
+9. [Productbrede concurrentieaudit](docs/09-productbrede-concurrentieaudit.md) — concurrentiedruk en productstructuur per BOzARC-productfamilie
+10. [Google-zichtbaarheid en SEO/SEA/GEO/AEO audit](docs/10-google-zichtbaarheid-seo-sea-geo-aeo-audit.md) — indicatieve publieke SERP-steekproef en actiepunten per producttak
 
 ## Reports
 
@@ -22,6 +24,7 @@ Bijkomend onderzoeks- en deliverable-materiaal staat in [`reports/`](reports/):
 - [`Bozarc_Analyse_Website_Marketing.pdf`](reports/Bozarc_Analyse_Website_Marketing.pdf) — het volledige rapport als pdf (gegenereerd via [`generate_pdf.py`](reports/generate_pdf.py)). Bevat een aantal gelabelde plaatshouders voor schermafbeeldingen die nog manueel toegevoegd moeten worden.
 - [`bozarc_keyword_research.xlsx`](reports/bozarc_keyword_research.xlsx) — de volledige keyword-werkmap (clusters, autosuggest-rondes, negatives, sources) waarop onderdeel 3 is gebaseerd.
 - [`bozarc_productboom_mapping.xlsx`](reports/bozarc_productboom_mapping.xlsx) — productboom van de huidige Bozarc-site met hoofdgroep, subpagina, URL, korte samenvatting, verwarringspunt en mogelijke klantvraag.
+- [`bozarc_productbrede_audit_concurrentie_en_google.xlsx`](reports/bozarc_productbrede_audit_concurrentie_en_google.xlsx) — gecombineerde auditwerkmap met concurrentieaudit, SERP-steekproef, SEO/SEA/GEO/AEO-matrix, productpagina-check en bronnen.
 
 ## Cloudflare Workers
 

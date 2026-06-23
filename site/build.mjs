@@ -11,11 +11,14 @@ const docs = [
   ["doelgroep", "Doelgroep en seizoen", "docs/05-doelgroep-seizoenspatroon.md"],
   ["aanbevelingen", "Aanbevelingen", "docs/06-aanbevelingen.md"],
   ["productbreed", "Productbreed auditkader", "docs/08-productbreed-auditkader.md"],
+  ["productconcurrentie", "Productbrede concurrentieaudit", "docs/09-productbrede-concurrentieaudit.md"],
+  ["zichtbaarheid", "Google-zichtbaarheid audit", "docs/10-google-zichtbaarheid-seo-sea-geo-aeo-audit.md"],
 ];
 const downloads = [
   ["Bozarc_Analyse_Website_Marketing.pdf", "Strategisch rapport PDF"],
   ["bozarc_keyword_research.xlsx", "Keyword research Excel"],
   ["bozarc_productboom_mapping.xlsx", "Productboom mapping Excel"],
+  ["bozarc_productbrede_audit_concurrentie_en_google.xlsx", "Productbrede audit Excel"],
 ];
 
 const escapeHtml = (value) =>
@@ -137,6 +140,7 @@ function page(renderedDocs) {
         <ul>
           <li>Auditkader verbreed naar alle huidige productfamilies: carports, terras, Nova, Vista, serres en B2B.</li>
           <li>Concurrentiedruk komt van MiniFlat, Veranco, Winsol, Harol en Ovalux.</li>
+          <li>Nieuwe audits bekijken elk huidig product op concurrentie, zichtbaarheid, SEO, SEA, GEO en AEO.</li>
           <li>Negatives en leadkwaliteit moeten vooraf besproken worden.</li>
           <li>Cloudflare Workers maakt hiervan een automatisch updatebare webpagina.</li>
         </ul>
