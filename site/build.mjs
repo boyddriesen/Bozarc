@@ -216,7 +216,11 @@ async function build() {
   await mkdir(path.join(outDir, "reports"), { recursive: true });
 
   const { author, date } = getLastCommitMeta();
-  const updated = new Intl.DateTimeFormat("nl-BE", { dateStyle: "long", timeStyle: "short" }).format(date);
+  const updated = new Intl.DateTimeFormat("nl-BE", {
+    dateStyle: "long",
+    timeStyle: "short",
+    timeZone: "Europe/Brussels",
+  }).format(date);
   const updatedLabel = author ? `Laatste aanpassing: ${updated} door ${author}` : `Laatst gebouwd: ${updated}`;
 
   const renderedDocs = await Promise.all(
