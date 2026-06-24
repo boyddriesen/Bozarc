@@ -16,6 +16,7 @@ Strategisch voorstel ter voorbereiding van de samenwerking met Bozarc (carports,
 8. [Productbreed auditkader](docs/08-productbreed-auditkader.md) — scope-guard voor alle huidige producten en SEO/SEA/GEO/AEO
 9. [Productbrede concurrentieaudit](docs/09-productbrede-concurrentieaudit.md) — concurrentiedruk en productstructuur per BOzARC-productfamilie
 10. [Google-zichtbaarheid en SEO/SEA/GEO/AEO audit](docs/10-google-zichtbaarheid-seo-sea-geo-aeo-audit.md) — indicatieve publieke SERP-steekproef en actiepunten per producttak
+11. [Golden Circle-vragenlijst](docs/11-golden-circle-vragenlijst.md) — vragen voor Bozarc zelf, als voorbereiding op de merk-/strategieworkshop
 
 ## Reports
 

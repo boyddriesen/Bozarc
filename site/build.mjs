@@ -14,6 +14,7 @@ const docs = [
   ["productbreed", "Productbreed auditkader", "docs/08-productbreed-auditkader.md"],
   ["productconcurrentie", "Productbrede concurrentieaudit", "docs/09-productbrede-concurrentieaudit.md"],
   ["zichtbaarheid", "Google-zichtbaarheid audit", "docs/10-google-zichtbaarheid-seo-sea-geo-aeo-audit.md"],
+  ["goldencircle", "Golden Circle-vragenlijst", "docs/11-golden-circle-vragenlijst.md"],
 ];
 const downloads = [
   ["Bozarc_Analyse_Website_Marketing.pdf", "Strategisch rapport PDF"],
