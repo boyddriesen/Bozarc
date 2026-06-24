@@ -22,18 +22,29 @@ const downloads = [
   ["bozarc_productbrede_audit_concurrentie_en_google.xlsx", "Productbrede audit Excel"],
 ];
 
+// Maps a doc's markdown filename (e.g. "06-aanbevelingen.md") to its page slug,
+// so cross-references between docs resolve to the right sub-URL instead of a
+// dangling ".md" link.
+const docFileToSlug = new Map(docs.map(([id, , file]) => [path.basename(file), id]));
+
 const escapeHtml = (value) =>
   value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+
+function resolveDocLink(href) {
+  const target = href.startsWith("../reports/")
+    ? `reports/${href.slice("../reports/".length)}`
+    : href;
+  const basename = target.split("/").pop();
+  const slug = docFileToSlug.get(basename);
+  return slug ? `/${slug}/` : target;
+}
 
 function inlineMarkdown(value) {
   const withMarkdownLinks = escapeHtml(value)
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
-      const target = href.startsWith("../reports/")
-        ? `reports/${href.slice("../reports/".length)}`
-        : href;
-      return `<a href="${escapeHtml(target)}">${label}</a>`;
+      return `<a href="${escapeHtml(resolveDocLink(href))}">${label}</a>`;
     });
   // Auto-link bare URLs (e.g. plain "Label: https://...") that aren't already
   // inside an href attribute from the markdown-link replacement above.
@@ -101,24 +112,6 @@ function renderMarkdown(markdown) {
   return html.join("\n");
 }
 
-async function build() {
-  await rm(outDir, { force: true, recursive: true });
-  await mkdir(path.join(outDir, "reports"), { recursive: true });
-  const renderedDocs = await Promise.all(
-    docs.map(async ([id, title, file]) => {
-      const markdown = await readFile(path.join(root, file), "utf8");
-      return { id, title, html: renderMarkdown(markdown) };
-    }),
-  );
-  await Promise.all(
-    downloads.map(([file]) =>
-      copyFile(path.join(root, "reports", file), path.join(outDir, "reports", file)),
-    ),
-  );
-  await writeFile(path.join(outDir, "index.html"), page(renderedDocs), "utf8");
-  await writeFile(path.join(outDir, "_headers"), "/*\n  X-Content-Type-Options: nosniff\n", "utf8");
-}
-
 function getLastCommitMeta() {
   try {
     const author = execSync("git log -1 --format=%an", { cwd: root }).toString().trim();
@@ -129,30 +122,48 @@ function getLastCommitMeta() {
   }
 }
 
-function page(renderedDocs) {
-  const { author, date } = getLastCommitMeta();
-  const updated = new Intl.DateTimeFormat("nl-BE", { dateStyle: "long", timeStyle: "short" }).format(date);
-  const updatedLabel = author ? `Laatste aanpassing: ${updated} door ${author}` : `Laatst gebouwd: ${updated}`;
+function topNav(updatedLabel) {
+  return `<nav class="topnav"><a class="brand" href="/">Bozarc Research Hub</a><span>${updatedLabel}</span></nav>`;
+}
+
+function subNav(activeId) {
+  return `<nav class="subnav" aria-label="Onderdelen">
+    <a href="/" class="${activeId ? "" : "active"}">Overzicht</a>
+    ${docs
+      .map(([id, title]) => `<a href="/${id}/" class="${id === activeId ? "active" : ""}">${title}</a>`)
+      .join("")}
+  </nav>`;
+}
+
+function layout({ title, updatedLabel, activeId, body }) {
   return `<!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Bozarc website-, marketing- en keywordresearch als deelbare microsite.">
-  <title>Bozarc Research Hub</title>
+  <title>${escapeHtml(title)} — Bozarc Research Hub</title>
   <style>${styles}</style>
 </head>
 <body>
+  ${topNav(updatedLabel)}
+  ${subNav(activeId)}
+  ${body}
+</body>
+</html>`;
+}
+
+function homePage(updatedLabel) {
+  const body = `
   <header class="hero">
-    <nav><strong>Bozarc Research Hub</strong><span>${updatedLabel}</span></nav>
     <section class="hero-grid">
       <div>
         <p class="label">Website & marketing analysis</p>
         <h1>Een deelbare researchpagina uit de GitHub-repo.</h1>
         <p class="intro">Deze microsite bundelt de bevindingen, keyword research, concurrentiebenchmark en downloads voor Bozarc. GitHub blijft de bron; Cloudflare Workers publiceert de laatste versie.</p>
         <div class="actions">
-          <a class="button primary" href="#aanbevelingen">Bekijk aanbevelingen</a>
-          <a class="button" href="reports/bozarc_keyword_research.xlsx">Download Excel</a>
+          <a class="button primary" href="/aanbevelingen/">Bekijk aanbevelingen</a>
+          <a class="button" href="/reports/bozarc_keyword_research.xlsx">Download Excel</a>
         </div>
       </div>
       <aside class="summary">
@@ -172,23 +183,64 @@ function page(renderedDocs) {
       ${downloads
         .map(
           ([file, label]) =>
-            `<a href="reports/${file}"><span>${label}</span><small>${file}</small></a>`,
+            `<a href="/reports/${file}"><span>${label}</span><small>${file}</small></a>`,
         )
         .join("")}
     </section>
-    <section class="toc">
-      ${renderedDocs
-        .map((doc) => `<a href="#${doc.id}">${doc.title}</a>`)
-        .join("")}
+    <section class="toc" aria-label="Onderdelen">
+      ${docs.map(([id, title]) => `<a href="/${id}/">${title}</a>`).join("")}
     </section>
-    ${renderedDocs
-      .map(
-        (doc) => `<article id="${doc.id}" class="doc"><div class="doc-title"><span>${doc.title}</span></div>${doc.html}</article>`,
-      )
-      .join("\n")}
-  </main>
-</body>
-</html>`;
+  </main>`;
+  return layout({ title: "Overzicht", updatedLabel, activeId: null, body });
+}
+
+function docPage(doc, index, updatedLabel) {
+  const prev = docs[index - 1];
+  const next = docs[index + 1];
+  const body = `
+  <main class="doc-main">
+    <article class="doc">
+      <div class="doc-title"><span>${doc.title}</span></div>
+      ${doc.html}
+    </article>
+    <nav class="pager">
+      ${prev ? `<a class="button" href="/${prev[0]}/">&larr; ${prev[1]}</a>` : "<span></span>"}
+      ${next ? `<a class="button" href="/${next[0]}/">${next[1]} &rarr;</a>` : "<span></span>"}
+    </nav>
+  </main>`;
+  return layout({ title: doc.title, updatedLabel, activeId: doc.id, body });
+}
+
+async function build() {
+  await rm(outDir, { force: true, recursive: true });
+  await mkdir(path.join(outDir, "reports"), { recursive: true });
+
+  const { author, date } = getLastCommitMeta();
+  const updated = new Intl.DateTimeFormat("nl-BE", { dateStyle: "long", timeStyle: "short" }).format(date);
+  const updatedLabel = author ? `Laatste aanpassing: ${updated} door ${author}` : `Laatst gebouwd: ${updated}`;
+
+  const renderedDocs = await Promise.all(
+    docs.map(async ([id, title, file]) => {
+      const markdown = await readFile(path.join(root, file), "utf8");
+      return { id, title, html: renderMarkdown(markdown) };
+    }),
+  );
+
+  await Promise.all(
+    downloads.map(([file]) =>
+      copyFile(path.join(root, "reports", file), path.join(outDir, "reports", file)),
+    ),
+  );
+
+  await writeFile(path.join(outDir, "index.html"), homePage(updatedLabel), "utf8");
+  await Promise.all(
+    renderedDocs.map(async (doc, index) => {
+      const dir = path.join(outDir, doc.id);
+      await mkdir(dir, { recursive: true });
+      await writeFile(path.join(dir, "index.html"), docPage(doc, index, updatedLabel), "utf8");
+    }),
+  );
+  await writeFile(path.join(outDir, "_headers"), "/*\n  X-Content-Type-Options: nosniff\n", "utf8");
 }
 
 const styles = `
@@ -198,10 +250,14 @@ html, body { overflow-x: clip; }
 body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.55; }
 a { color: var(--accent-dark); text-decoration: none; }
 a:hover { text-decoration: underline; }
-.hero { min-height: 76vh; padding: 28px clamp(18px, 5vw, 68px) 52px; background: linear-gradient(135deg, #eef4ef 0%, #ffffff 58%, #e7efe9 100%); border-bottom: 1px solid var(--line); }
-nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 0.92rem; }
-nav strong { color: var(--ink); font-size: 1rem; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: clamp(26px, 5vw, 70px); align-items: end; max-width: 1180px; margin: clamp(70px, 12vw, 130px) auto 0; }
+.topnav { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 0.92rem; padding: 18px clamp(18px, 5vw, 68px); background: var(--white); border-bottom: 1px solid var(--line); }
+.topnav .brand { color: var(--ink); font-size: 1rem; font-weight: 800; }
+.subnav { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px clamp(18px, 5vw, 68px); background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.subnav a { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--muted); font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+.subnav a.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.subnav a:hover { text-decoration: none; border-color: var(--accent); }
+.hero { padding: clamp(24px, 5vw, 56px) clamp(18px, 5vw, 68px) 52px; background: linear-gradient(135deg, #eef4ef 0%, #ffffff 58%, #e7efe9 100%); border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: clamp(26px, 5vw, 70px); align-items: end; max-width: 1180px; margin: 0 auto; }
 .hero-grid > * { min-width: 0; }
 .label { color: var(--accent-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 0; font-size: 0.78rem; }
 h1 { max-width: 850px; margin: 14px 0 22px; font-size: clamp(2.4rem, 6vw, 5.6rem); line-height: 0.95; letter-spacing: 0; overflow-wrap: anywhere; }
@@ -213,6 +269,7 @@ h1 { max-width: 850px; margin: 14px 0 22px; font-size: clamp(2.4rem, 6vw, 5.6rem
 .summary h2 { margin-top: 0; font-size: 1.1rem; }
 .summary ul { padding-left: 18px; margin-bottom: 0; color: var(--muted); }
 main { width: min(1120px, calc(100% - 36px)); margin: 0 auto 72px; }
+main.doc-main { margin-top: 36px; }
 .downloads, .toc { display: grid; gap: 12px; margin-top: 28px; }
 .downloads { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .downloads a, .toc a { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; }
@@ -220,13 +277,14 @@ main { width: min(1120px, calc(100% - 36px)); margin: 0 auto 72px; }
 .downloads small { color: var(--muted); overflow-wrap: anywhere; }
 .toc { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 26px; }
 .toc a { font-weight: 700; }
-.doc { margin-top: 22px; padding: clamp(22px, 4vw, 42px); background: var(--white); border: 1px solid var(--line); border-radius: 8px; }
+.doc { padding: clamp(22px, 4vw, 42px); background: var(--white); border: 1px solid var(--line); border-radius: 8px; }
 .doc-title { margin-bottom: 22px; color: var(--accent-dark); font-weight: 800; }
 .doc h2 { margin: 0 0 18px; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.05; }
 .doc h3 { margin-top: 34px; font-size: 1.45rem; }
 .doc h4 { margin-top: 26px; font-size: 1.08rem; }
 .doc p, .doc li { color: #38443c; }
 .doc code { padding: 2px 5px; border-radius: 4px; background: #edf2ee; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
 blockquote { margin: 22px 0; padding: 16px 18px; border-left: 4px solid var(--warm); background: #fbf7ef; color: #584429; }
 .table-wrap { width: 100%; overflow-x: auto; margin: 22px 0; border: 1px solid var(--line); border-radius: 8px; }
 table { width: 100%; border-collapse: collapse; min-width: 720px; background: var(--white); }
@@ -234,8 +292,7 @@ th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: l
 th { background: #edf3ef; font-size: 0.88rem; }
 tr:last-child td { border-bottom: 0; }
 @media (max-width: 820px) {
-  .hero { min-height: auto; padding-bottom: 34px; }
-  nav { align-items: flex-start; flex-direction: column; }
+  .topnav { flex-direction: column; align-items: flex-start; gap: 6px; }
   .hero-grid, .downloads, .toc { grid-template-columns: 1fr; }
   h1 { font-size: clamp(2.35rem, 14vw, 4rem); }
   main { width: min(100% - 24px, 1120px); }

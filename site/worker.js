@@ -22,7 +22,16 @@ export default {
         return unauthorized();
       }
       const suppliedPassword = decoded.slice(decoded.indexOf(":") + 1);
-      if (suppliedPassword === password) {
+      const encoder = new TextEncoder();
+      const suppliedBuf = encoder.encode(suppliedPassword);
+      const expectedBuf = encoder.encode(password);
+      // Constant-time comparison: never short-circuit on length mismatch,
+      // so response timing doesn't leak the secret's length.
+      const lengthsMatch = suppliedBuf.byteLength === expectedBuf.byteLength;
+      const isEqual = lengthsMatch
+        ? crypto.subtle.timingSafeEqual(suppliedBuf, expectedBuf)
+        : !crypto.subtle.timingSafeEqual(suppliedBuf, suppliedBuf);
+      if (isEqual) {
         return env.ASSETS.fetch(request);
       }
     }

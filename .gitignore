@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .dev.vars
 site/dist/
+.wrangler/
 site/dist/
