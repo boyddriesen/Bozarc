@@ -128,13 +128,29 @@ function topNav(updatedLabel) {
   return `<nav class="topnav"><a class="brand" href="/">Bozarc Research Hub</a><span>${updatedLabel}</span></nav>`;
 }
 
+function navLinks(activeId) {
+  return [
+    ["/", "Overzicht", !activeId],
+    ...docs.map(([id, title]) => [`/${id}/`, title, id === activeId]),
+  ];
+}
+
 function subNav(activeId) {
+  const links = navLinks(activeId);
+  const renderLink = ([href, title, active]) => `<a href="${href}" class="${active ? "active" : ""}">${title}</a>`;
   return `<nav class="subnav" aria-label="Onderdelen">
-    <a href="/" class="${activeId ? "" : "active"}">Overzicht</a>
-    ${docs
-      .map(([id, title]) => `<a href="/${id}/" class="${id === activeId ? "active" : ""}">${title}</a>`)
-      .join("")}
-  </nav>`;
+    <button type="button" class="subnav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="subnav-drawer">
+      <span class="subnav-toggle__icon" aria-hidden="true"></span>
+      Onderdelen
+    </button>
+  </nav>
+  <div class="subnav-drawer" id="subnav-drawer">
+    <div class="subnav-drawer__backdrop"></div>
+    <div class="subnav-drawer__panel">
+      <button type="button" class="subnav-drawer__close" aria-label="Menu sluiten">&times;</button>
+      <nav aria-label="Onderdelen">${links.map(renderLink).join("")}</nav>
+    </div>
+  </div>`;
 }
 
 function layout({ title, updatedLabel, activeId, body }) {
@@ -154,6 +170,30 @@ function layout({ title, updatedLabel, activeId, body }) {
   ${topNav(updatedLabel)}
   ${subNav(activeId)}
   ${body}
+  <script>
+  (function () {
+    var toggle = document.querySelector(".subnav-toggle");
+    var drawer = document.getElementById("subnav-drawer");
+    if (!toggle || !drawer) return;
+    function open() {
+      drawer.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      drawer.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    toggle.addEventListener("click", open);
+    drawer.querySelector(".subnav-drawer__backdrop").addEventListener("click", close);
+    drawer.querySelector(".subnav-drawer__close").addEventListener("click", close);
+    drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  })();
+  </script>
 </body>
 </html>`;
 }
@@ -293,10 +333,23 @@ a:hover { color: var(--teal-700); text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(40,178,200,0.28); border-radius: 4px; }
 .topnav { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--fg-3); font-family: var(--font-mono); font-size: 0.8rem; padding: 18px clamp(18px, 5vw, 68px); background: rgba(255,255,255,0.86); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--border-1); }
 .topnav .brand { color: var(--navy); font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
-.subnav { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px clamp(18px, 5vw, 68px); background: var(--bg-page); border-bottom: 1px solid var(--border-1); position: sticky; top: 0; z-index: 5; }
-.subnav a { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border-1); background: var(--neutral-0); color: var(--fg-3); font-size: 0.82rem; font-weight: 600; white-space: nowrap; transition: all 120ms var(--ease-snap); }
-.subnav a.active { background: var(--navy); border-color: var(--navy); color: var(--neutral-0); }
-.subnav a:hover { text-decoration: none; border-color: var(--teal); color: var(--navy); }
+.subnav { display: flex; align-items: center; padding: 14px clamp(18px, 5vw, 68px); background: var(--bg-page); border-bottom: 1px solid var(--border-1); position: sticky; top: 0; z-index: 5; }
+.subnav-toggle { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-1); background: var(--neutral-0); color: var(--navy); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem; cursor: pointer; white-space: nowrap; }
+.subnav-toggle__icon { position: relative; display: block; width: 18px; height: 2px; background: var(--navy); border-radius: 2px; }
+.subnav-toggle__icon::before, .subnav-toggle__icon::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: var(--navy); border-radius: 2px; }
+.subnav-toggle__icon::before { top: -6px; }
+.subnav-toggle__icon::after { top: 6px; }
+.subnav-drawer { position: fixed; inset: 0; z-index: 40; visibility: hidden; pointer-events: none; }
+.subnav-drawer.open { visibility: visible; pointer-events: auto; }
+.subnav-drawer__backdrop { position: absolute; inset: 0; background: rgba(11,26,46,0.4); opacity: 0; transition: opacity 200ms var(--ease-snap); }
+.subnav-drawer.open .subnav-drawer__backdrop { opacity: 1; }
+.subnav-drawer__panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(320px, 86vw); background: var(--neutral-0); padding: 22px; display: flex; flex-direction: column; gap: 14px; transform: translateX(100%); transition: transform 240ms var(--ease-snap); box-shadow: var(--shadow-lg); overflow-y: auto; }
+.subnav-drawer.open .subnav-drawer__panel { transform: translateX(0); }
+.subnav-drawer__close { align-self: flex-end; background: transparent; border: 0; font-size: 1.6rem; line-height: 1; color: var(--navy); cursor: pointer; padding: 4px 8px; }
+.subnav-drawer__panel nav { display: flex; flex-direction: column; gap: 4px; }
+.subnav-drawer__panel nav a { padding: 12px 10px; border-radius: var(--radius-md); font-weight: 600; color: var(--navy); font-size: 1rem; }
+.subnav-drawer__panel nav a.active { background: var(--teal-100); color: var(--teal-700); }
+.subnav-drawer__panel nav a:hover { background: var(--neutral-100); text-decoration: none; }
 .hero { padding: clamp(24px, 5vw, 56px) clamp(18px, 5vw, 68px) 52px; background: var(--bg-wash); border-bottom: 1px solid var(--border-1); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: clamp(26px, 5vw, 70px); align-items: end; max-width: 1180px; margin: 0 auto; }
 .hero-grid > * { min-width: 0; }
