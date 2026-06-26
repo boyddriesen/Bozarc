@@ -15,6 +15,7 @@ const docs = [
   ["productconcurrentie", "Productbrede concurrentieaudit", "docs/09-productbrede-concurrentieaudit.md"],
   ["zichtbaarheid", "Google-zichtbaarheid audit", "docs/10-google-zichtbaarheid-seo-sea-geo-aeo-audit.md"],
   ["goldencircle", "Golden Circle-vragenlijst", "docs/11-golden-circle-vragenlijst.md"],
+  ["googleads", "Resultaten Google Ads", "docs/12-google-ads-resultaten.md"],
 ];
 const downloads = [
   ["Bozarc_Analyse_Website_Marketing.pdf", "Strategisch rapport PDF"],
@@ -174,6 +175,7 @@ function homePage(updatedLabel) {
           <li>Concurrentiedruk komt van MiniFlat, Veranco, Winsol, Harol en Ovalux.</li>
           <li>Nieuwe audits bekijken elk huidig product op concurrentie, zichtbaarheid, SEO, SEA, GEO en AEO.</li>
           <li>Negatives en leadkwaliteit moeten vooraf besproken worden.</li>
+          <li>Google Ads-resultaten van het afgelopen jaar zijn uitgelezen op account-, regio- en zoekwoordniveau.</li>
           <li>Cloudflare Workers maakt hiervan een automatisch updatebare webpagina.</li>
         </ul>
       </aside>

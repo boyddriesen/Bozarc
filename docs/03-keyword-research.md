@@ -35,6 +35,8 @@ Dit document gaat niet over "welke keywords hebben we gevonden?" maar over:
 | Ovalux is een geverifieerde Waalse/Franstalige concurrent | Relevant als concurrentiebenchmark en als mogelijke competitor negative | Review/uitsluiten |
 | Nederland en Frankrijk zijn al actieve betaalde regio's (Philippe's budget-Excel) | Eerder ten onrechte als "foute regio" behandeld in de negatives; NL is 100% mobilhome/caravan-scope | Bevestigd |
 
+**Update na uitlezen van het Google Ads-account** ([resultaten Google Ads](12-google-ads-resultaten.md)): de effectief geboden zoekwoorden in het account bevatten geen van de hierboven genoemde risicotermen (`goedkoop`, `tweedehands`, `hubo`, `gamma`, `brico`, `ikea`, ...). Dat is geruststellend, maar zegt nog niets over welke brede zoekopdrachten ze triggeren — daarvoor is een apart zoektermrapport nodig.
+
 ## 4. Wat We Nog Niet Weten
 
 Deze informatie moet BOzARC bevestigen voor een campagneplan:
@@ -47,6 +49,8 @@ Deze informatie moet BOzARC bevestigen voor een campagneplan:
 - Wat is de lead-to-sale close rate?
 - Welke zoekwoorden brengen veel werk maar weinig goede klanten?
 - Wil BOzARC prijszoekers aantrekken of vermijden?
+
+Een eerste antwoord op de vraag over zoekwoorden zonder goede klanten staat intussen in [resultaten Google Ads](12-google-ads-resultaten.md): een concrete lijst van zoekwoorden en advertentiegroepen die wel kosten maar geen conversies opleveren — vooral Franse informatieve termen (`auvent de terrasse`, `marquise terrasse`) en prijszoeker-termen (`carport prijs`, `prijs carport`).
 
 ## 5. Aanbevolen Startclusters
 
@@ -130,6 +134,8 @@ Voorlopige uitsluitingen (volledige lijst, gesynchroniseerd met de `Negatives`-s
 - `verwijderen`
 
 **Correctie regio-scope:** `groningen` en `rotterdam` staan hier als negative voor de **algemene** campagnes (carports algemeen, terrasoverkappingen, serres, B2B). Voor de **Vehicle Carports-cluster** (mobilhome/caravan) zijn deze Nederlandse steden net wél relevant — Philippe's budget-Excel bevestigt actieve Google SEA-spend in Nederland die 100% op mobilhome/caravan-carports focust. Deze geo-varianten zijn toegevoegd aan de `Vehicle Carports`-sheet.
+
+**Update:** de huidige bod-zoekwoordenlijst in het account bevat geen van de termen hierboven — zie [resultaten Google Ads](12-google-ads-resultaten.md). Geen reden om de negatives-discussie te laten vallen (een zoektermrapport kan nog steeds brede triggers blootleggen), maar er is geen acute brandhaard gevonden op zoekwoordniveau.
 
 Bespreekvraag:
 Zijn er termen in deze lijst die BOzARC toch wil toelaten?
