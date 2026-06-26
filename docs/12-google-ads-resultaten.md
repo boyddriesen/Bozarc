@@ -4,6 +4,8 @@ Deze pagina bundelt de cijfers uit vijf exports van het Bozarc Google Ads-accoun
 
 > Belangrijk voorbehoud: er is geen zoektermrapport (Search Terms) in deze export. De cijfers hieronder gaan over de zoekwoorden waarop wordt geboden, niet over wat bezoekers effectief intikken. De vraag uit [marketingkanalen](02-marketingkanalen.md) of brede zoekwoorden ook op risicotermen (`goedkoop`, `tweedehands`, `hubo`, `gamma`, `brico`, `ikea`, ...) triggeren, kan dus nog niet bevestigd of ontkracht worden — dat vraagt een apart zoektermrapport.
 
+> Waarom staan er kommagetallen bij "Conversies" (bv. 1.299,1) terwijl een conversie toch wel-of-niet gebeurt? Dat klopt op het niveau van één bezoeker, maar Google Ads rapporteert geen letterlijke telling. Twee redenen voor de fractionele cijfers: (1) het standaard attributiemodel (data-driven attribution) verdeelt het krediet van één conversie over alle zoekwoorden/advertenties waarmee de bezoeker voordien in aanraking kwam, waardoor een rij bv. 0,6 conversie krijgt toebedeeld; (2) Google telt ook gemodelleerde/geschatte conversies mee — vooral door EU consent mode, waar niet elke conversie rechtstreeks waargenomen kan worden en Google het verschil statistisch bijschat. Daardoor is zelfs het account-totaal (1.583,79) geen rond getal. CPA en ROAS zijn berekend op basis van dit gerapporteerde (fractionele) cijfer, zoals Google Ads dat ook zelf doet.
+
 ## Account in cijfers (volledige periode, alle campagnes — ook gepauzeerde)
 
 | Campagnetype | Kosten | Vertoningen | Klikken | CTR | Conversies | Conv.waarde | ROAS | CPA |
